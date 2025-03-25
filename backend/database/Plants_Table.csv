@@ -1,4 +1,5 @@
-1,Lettuce,Full Sun/Partial Shade,Moderate,"Well-drained, Loamy",Lactuca sativa,"Carrots, Radishes, Onions","Butterhead, Romaine, Leaf","Harvest outer leaves first for continuous growth."
+,plant_name,sunlight,water,soil,plant_name_scientific,companions,varieties,notes
+1,Lettuce,Full Sun/Partial Shade,Moderate,"Well-drained, Loamy",Lactuca sativa,"Carrots, Radishes, Onions","Butterhead, Romaine, Leaf, Iceberg","Harvest outer leaves first for continuous growth."
 2,Spinach,Partial Shade,Frequent,"Well-drained, Rich",Spinacia oleracea,"Strawberries, Peas, Radishes","Savoy, Flat-leaf","Plant in cool weather for best yield."
 3,Kale,Full Sun/Partial Shade,Moderate,"Well-drained, Fertile",Brassica oleracea,"Onions, Beets, Celery","Curly, Lacinato, Red Russian","Rich in nutrients; frost-tolerant."
 4,Swiss Chard,Full Sun/Partial Shade,Moderate,"Rich, Well-drained",Beta vulgaris,"Onions, Beans, Cabbage","Rainbow, Fordhook","Edible stems and leaves."

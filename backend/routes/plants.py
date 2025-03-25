@@ -8,11 +8,11 @@ plants_bp = Blueprint('plants', __name__)
 def plants():
     plants = Plant.plants()
 
-    if plants:
-        return jsonify({'plants': plants})
+    if plants == []:
+        Plant.create_table_from_csv("backend/database/Plants_Table.csv")
+        plants = Plant.plants()
 
-    else:
-        return jsonify({"error": "error fetching plant data"})
+    return jsonify({"plants": plants})
 
 
 @plants_bp.route("/recommend", methods=["POST"])
