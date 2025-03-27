@@ -2,11 +2,13 @@ from sqlalchemy import (
     Table,
     Column,
     Integer,
-    String
+    String,
+    or_
 )
 from db import Base, PlantEngine, PlantSession
 from pathlib import Path
 import pandas as pd
+from typing import List
 
 engine = PlantEngine
 Session = PlantSession
@@ -63,3 +65,36 @@ class Plant(Base):
     @staticmethod
     def create_table():
         Base.metadata.create_all(PlantEngine, checkfirst=True)
+
+    # !!! ORDER RECCOMENDATIONS BECAUSE A LOT ARE RETURNED !!!
+    @staticmethod
+    def recommend(sunlight: str, water: str, soil: str) -> List[str]:
+        session = Session()
+        try:
+            final_query = session.query(Plant)
+
+            query = []
+
+            if sunlight:
+                query.append(Plant.sunlight == sunlight)
+
+            if water:
+                query.append(Plant.water == water)
+
+            if soil:
+                query.append(Plant.soil == soil)
+
+            final_query = final_query.filter(or_(*query))
+
+            plants = final_query.all()
+
+            plant_scores = ()
+
+            plants = [{column.name: getattr(
+                plant, column.name)for column in Plant.__table__.columns
+            } for plant in plants]
+
+            return plants
+        
+        except Exception as e:
+            return f'Error finding recommended plants ({e})'

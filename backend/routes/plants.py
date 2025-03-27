@@ -17,10 +17,11 @@ def plants():
 
 @plants_bp.route("/recommend", methods=["POST"])
 def recommend():
-    garden_specs = request.json
+    garden_specs = request.json  # dict:,sunlight,water,soil,
 
     try:
-        recommendations = Plant.recommend(garden_specs)
+        recommendations = Plant.recommend(**garden_specs)
+        recommendations = [recommendation['plant_name'] for recommendation in recommendations]
 
         return jsonify({'Recommended Plants': recommendations})
 

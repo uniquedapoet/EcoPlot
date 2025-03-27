@@ -3,7 +3,8 @@ from flask_cors import CORS
 from routes.plants import plants_bp
 
 app = Flask(__name__)
-CORS(app=app, origins=['http://localhost:3000'])
+CORS(app=app, )
+# CORS(app=app, origins=['http://localhost:3000'])
 
 app.register_blueprint(plants_bp, url_prefix='/plants')
 
