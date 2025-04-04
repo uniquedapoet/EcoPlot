@@ -73,6 +73,7 @@ class Plant(Base):
         try:
             final_query = session.query(Plant)
 
+            matched_plants = []
             query = []
 
             if sunlight:
@@ -88,13 +89,28 @@ class Plant(Base):
 
             plants = final_query.all()
 
-            plant_scores = ()
-
             plants = [{column.name: getattr(
                 plant, column.name)for column in Plant.__table__.columns
             } for plant in plants]
 
-            return plants
-        
+            for plant in plants:
+                match_count = 0
+
+                if plant['sunlight'] == sunlight:
+                    match_count += 1
+
+                if plant['soil'] == soil:
+                    match_count += 1
+
+                if plant['water'] == water:
+                    match_count += 1
+
+                plant['match_count'] = match_count
+                matched_plants.append(plant)
+
+            matched_plants.sort(key = lambda x: x['match_count'], reverse=True)
+
+            return matched_plants
+
         except Exception as e:
             return f'Error finding recommended plants ({e})'

@@ -1,8 +1,9 @@
 from flask import Blueprint, request, jsonify
 from models.plants import Plant
+from flask_cors import CORS
 
 plants_bp = Blueprint('plants', __name__)
-
+CORS(plants_bp)
 
 @plants_bp.route('/', methods=['GET'])
 def plants():
