@@ -5,7 +5,12 @@ import PlantSearch from './components/PlantSearch';
 function App() {
   return (
     <div className="App">
-      <PlantSearch/>
+      <div className='left'>
+      <PlantSearch />
+      </div>
+      <div className='right'>
+
+      </div>
     </div>
   );
 }
