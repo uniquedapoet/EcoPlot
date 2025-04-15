@@ -1,72 +1,72 @@
-,plant_name,sunlight,water,soil,plant_name_scientific,companions,varieties,notes
-0,Lettuce,Full Sun/Partial Shade,Moderate,"Loamy, Well-drained",Lactuca sativa,"Carrots, Radishes, Onions","Butterhead, Romaine, Leaf, Iceberg",Harvest outer leaves first for continuous growth.
-1,Spinach,Partial Shade,Frequent,"Rich, Well-drained",Spinacia oleracea,"Strawberries, Peas, Radishes","Savoy, Flat-leaf",Plant in cool weather for best yield.
-2,Kale,Full Sun/Partial Shade,Moderate,"Fertile, Well-drained",Brassica oleracea,"Onions, Beets, Celery","Curly, Lacinato, Red Russian",Rich in nutrients; frost-tolerant.
-3,Swiss Chard,Full Sun/Partial Shade,Moderate,"Rich, Well-drained",Beta vulgaris,"Onions, Beans, Cabbage","Rainbow, Fordhook",Edible stems and leaves.
-4,Collard Greens,Full Sun,Moderate,"Loamy, Well-drained",Brassica oleracea,"Tomatoes, Onions, Celery","Georgia Southern, Vates",Staple in Southern cooking.
-5,Mustard Greens,Full Sun/Partial Shade,Frequent,"Fertile, Well-drained",Brassica juncea,"Carrots, Lettuce, Beans","Southern Giant, Red Giant",Spicy flavor; grows quickly.
-6,Arugula,Partial Shade,Frequent,"Moist, Well-drained",Eruca sativa,"Radishes, Carrots, Dill","Wild, Cultivated",Peppery taste; great in salads.
-7,Endive,Full Sun/Partial Shade,Moderate,"Fertile, Well-drained",Cichorium endivia,"Radishes, Turnips","Curly, Broad-leaf",Slightly bitter; blanch to reduce bitterness.
-8,Bok Choy,Partial Shade,Frequent,"Rich, Well-drained",Brassica rapa,"Carrots, Beans","Baby, Standard",Common in Asian cuisine.
-9,Tatsoi,Partial Shade,Frequent,"Moist, Well-drained",Brassica rapa,"Spinach, Lettuce",Rosette-forming,Cold-tolerant; mild flavor.
-10,Carrots,Full Sun,Moderate,"Loose, Sandy",Daucus carota,"Onions, Leeks, Lettuce","Nantes, Danvers",Loosen soil for straight roots.
-11,Beets,Full Sun,Moderate,"Loamy, Well-drained",Beta vulgaris,"Lettuce, Cabbage, Onions","Detroit, Golden",Edible greens and roots.
-12,Radishes,Full Sun/Partial Shade,Frequent,"Moist, Well-drained",Raphanus sativus,"Carrots, Peas, Lettuce","Cherry Belle, Daikon",Fast-growing; good for intercropping.
-13,Turnips,Full Sun/Partial Shade,Moderate,"Loamy, Well-drained",Brassica rapa,"Peas, Beans","Purple Top, Hakurei",Both roots and greens are edible.
-14,Rutabaga,Full Sun,Moderate,"Fertile, Well-drained",Brassica napus,"Peas, Nasturtiums",American Purple Top,Sweet flavor after frost.
-15,Parsnips,Full Sun,Moderate,"Deep, Sandy",Pastinaca sativa,"Peas, Radishes",Hollow Crown,Harvest after frost for sweetness.
-16,Sweet Potatoes,Full Sun,Moderate,"Loamy, Well-drained",Ipomoea batatas,"Beans, Corn","Beauregard, Jewel",Vining plant; needs space.
-17,Potatoes,Full Sun,Moderate,"Loamy, Well-drained",Solanum tuberosum,"Beans, Cabbage, Corn","Russet, Yukon Gold",Hill soil around stems for more tubers.
-18,Onions,Full Sun,Moderate,"Loamy, Well-drained",Allium cepa,"Carrots, Lettuce, Strawberries","Yellow, Red, White",Plant sets or seeds.
-19,Shallots,Full Sun,Moderate,"Fertile, Well-drained",Allium cepa,"Beets, Lettuce","French, Dutch",Mild onion flavor.
-20,Garlic,Full Sun,Moderate,"Loamy, Well-drained",Allium sativum,"Carrots, Beets, Tomatoes","Hardneck, Softneck",Plant cloves in fall for summer harvest.
-21,Broccoli,Full Sun,Moderate,"Rich, Well-drained",Brassica oleracea,"Beans, Celery, Onions","Calabrese, Purple Sprouting",Harvest before flowers open.
-22,Cauliflower,Full Sun,Moderate,"Rich, Well-drained",Brassica oleracea,"Beans, Celery, Spinach","Snowball, Purple",Blanch heads by tying leaves.
-23,Brussels Sprouts,Full Sun,Moderate,"Fertile, Well-drained",Brassica oleracea,"Beets, Carrots","Long Island, Red Bull",Frost improves flavor.
-24,Cabbage,Full Sun,Moderate,"Rich, Well-drained",Brassica oleracea,"Beets, Celery, Onions","Green, Red, Savoy",Heavy feeder; needs consistent water.
-25,Kohlrabi,Full Sun/Partial Shade,Moderate,"Fertile, Well-drained",Brassica oleracea,"Beets, Cucumbers","Purple, White",Edible bulb and leaves.
-26,Tomatoes,Full Sun,Moderate,"Rich, Well-drained",Solanum lycopersicum,"Basil, Carrots, Marigolds","Cherry, Beefsteak",Stake or cage for support.
-27,Peppers,Full Sun,Moderate,"Loamy, Well-drained",Capsicum annuum,"Basil, Onions, Carrots","Bell, Jalapeño",Heat-loving; mulch to retain moisture.
-28,Eggplant,Full Sun,Moderate,"Loamy, Well-drained",Solanum melongena,"Beans, Peppers, Spinach","Black Beauty, Japanese",Requires warm soil.
-29,Tomatillos,Full Sun,Moderate,"Loamy, Well-drained",Physalis philadelphica,"Peppers, Basil","Purple, Green",Used in salsa verde.
-30,Green Beans,Full Sun,Moderate,"Rich, Well-drained",Phaseolus vulgaris,"Carrots, Corn, Cucumbers","Bush, Pole",Fix nitrogen in soil.
-31,Snap Peas,Full Sun/Partial Shade,Moderate,"Fertile, Well-drained",Pisum sativum,"Carrots, Radishes","Sugar Snap, Super Snappy",Edible pods.
-32,Snow Peas,Full Sun/Partial Shade,Moderate,"Fertile, Well-drained",Pisum sativum,"Carrots, Cucumbers",Oregon Sugar Pod,"Flat, tender pods."
-33,English Peas,Full Sun/Partial Shade,Moderate,"Fertile, Well-drained",Pisum sativum,"Carrots, Turnips","Little Marvel, Green Arrow",Shell for peas.
-34,Lima Beans,Full Sun,Moderate,"Loamy, Well-drained",Phaseolus lunatus,"Corn, Squash","Fordhook, Henderson",Also called butter beans.
-35,Black Beans,Full Sun,Moderate,"Loamy, Well-drained",Phaseolus vulgaris,"Corn, Squash",Black Turtle,Drought-tolerant.
-36,Pinto Beans,Full Sun,Moderate,"Loamy, Well-drained",Phaseolus vulgaris,"Corn, Squash","Burke, Othello",Common in Mexican cuisine.
-37,Chickpeas,Full Sun,Low,"Sandy, Well-drained",Cicer arietinum,"Cucumbers, Potatoes","Kabuli, Desi",Also called garbanzo beans.
-38,Edamame,Full Sun,Moderate,"Loamy, Well-drained",Glycine max,"Corn, Squash","Butterbeans, Midori Giant",Young soybeans.
-39,Zucchini,Full Sun,Frequent,"Loamy, Well-drained",Cucurbita pepo,"Corn, Beans, Radishes","Black Beauty, Golden",Harvest young for best flavor.
-40,Yellow Squash,Full Sun,Frequent,"Loamy, Well-drained",Cucurbita pepo,"Corn, Beans","Crookneck, Straightneck",Similar to zucchini.
-41,Acorn Squash,Full Sun,Moderate,"Rich, Well-drained",Cucurbita pepo,"Corn, Beans",Table Queen,Winter squash; stores well.
-42,Butternut Squash,Full Sun,Moderate,"Rich, Well-drained",Cucurbita moschata,"Corn, Beans",Waltham,"Sweet, nutty flavor."
-43,Spaghetti Squash,Full Sun,Moderate,"Rich, Well-drained",Cucurbita pepo,"Corn, Beans",Vegetable Spaghetti,Stringy flesh when cooked.
-44,Pumpkins,Full Sun,Frequent,"Rich, Well-drained",Cucurbita pepo,"Corn, Beans, Radishes","Jack O'Lantern, Sugar Pie",Needs space to sprawl.
-45,Delicata Squash,Full Sun,Moderate,"Rich, Well-drained",Cucurbita pepo,"Corn, Beans",Sweet Potato Squash,Edible skin.
-46,Kabocha Squash,Full Sun,Moderate,"Rich, Well-drained",Cucurbita maxima,"Corn, Beans",Japanese Pumpkin,"Sweet, dense flesh."
-47,Leeks,Full Sun,Moderate,"Fertile, Well-drained",Allium porrum,"Carrots, Celery","American Flag, Giant Musselburgh",Mild onion flavor.
-48,Scallions,Full Sun/Partial Shade,Moderate,"Fertile, Well-drained",Allium fistulosum,"Carrots, Beets",White Lisbon,Also called green onions.
-49,Chives,Full Sun/Partial Shade,Moderate,"Fertile, Well-drained",Allium schoenoprasum,"Carrots, Tomatoes","Common, Garlic",Perennial; edible flowers.
-50,Watermelon,Full Sun,Frequent,"Sandy, Well-drained",Citrullus lanatus,"Corn, Beans, Radishes","Sugar Baby, Crimson Sweet",Needs long growing season.
-51,Cantaloupe,Full Sun,Frequent,"Sandy, Well-drained",Cucumis melo,"Corn, Beans","Hale's Best, Ambrosia","Sweet, fragrant flesh."
-52,Honeydew Melon,Full Sun,Frequent,"Sandy, Well-drained",Cucumis melo,"Corn, Beans","Green Flesh, Orange Flesh",Sweet and juicy.
-53,Cucumbers,Full Sun,Frequent,"Sandy, Well-drained",Cucumis sativus,"Beans, Corn, Sunflowers","Pickling, Slicing",Trellis for straighter fruit.
-54,Bitter Melon,Full Sun,Frequent,"Loamy, Well-drained",Momordica charantia,"Beans, Corn","Indian, Chinese",Bitter taste; used in Asian dishes.
-55,Corn,Full Sun,Frequent,"Rich, Well-drained",Zea mays,"Beans, Squash, Peas","Sweet, Dent, Flint",Plant in blocks for pollination.
-56,Okra,Full Sun,Moderate,"Loamy, Well-drained",Abelmoschus esculentus,"Peppers, Eggplant","Clemson Spineless, Burgundy",Thrives in heat.
-57,Celery,Full Sun/Partial Shade,Frequent,"Rich, Moist",Apium graveolens,"Beans, Tomatoes","Utah, Pascal",Requires consistent watering.
-58,Fennel,Full Sun,Moderate,"Fertile, Well-drained",Foeniculum vulgare,"Dill, Cabbage","Florence, Bronze",Licorice flavor; bulbs edible.
-59,Artichokes,Full Sun,Moderate,"Fertile, Well-drained",Cynara scolymus,"Tarragon, Cabbage","Green Globe, Purple",Perennial in warm climates.
-60,Asparagus,Full Sun,Moderate,"Sandy, Well-drained",Asparagus officinalis,"Tomatoes, Parsley","Jersey, Purple Passion",Perennial; harvest in 2-3 years.
-61,Rhubarb,Full Sun/Partial Shade,Moderate,"Rich, Well-drained",Rheum rhabarbarum,"Strawberries, Kale","Victoria, Crimson Red",Only stalks are edible.
-62,Basil,Full Sun,Frequent,"Rich, Well-drained",Ocimum basilicum,"Tomatoes, Peppers, Oregano","Sweet, Purple, Thai",Pinch back to encourage bushiness.
-63,Cilantro,Full Sun/Partial Shade,Moderate,"Loamy, Well-drained",Coriandrum sativum,"Spinach, Peas","Leisure, Santo",Leaves are cilantro; seeds are coriander.
-64,Parsley,Full Sun/Partial Shade,Moderate,"Rich, Well-drained",Petroselinum crispum,"Tomatoes, Asparagus","Curly, Italian",Biennial; often grown as annual.
-65,Dill,Full Sun,Moderate,"Rich, Well-drained",Anethum graveolens,"Cucumbers, Cabbage, Lettuce","Bouquet, Fernleaf",Attracts beneficial insects.
-66,Oregano,Full Sun,Moderate,"Sandy, Well-drained",Origanum vulgare,"Basil, Peppers, Tomatoes","Greek, Italian",Perennial; drought-tolerant.
-67,Thyme,Full Sun,Low,"Sandy, Well-drained",Thymus vulgaris,"Cabbage, Strawberries, Eggplant","English, Lemon",Perennial; great for cooking.
-68,Rosemary,Full Sun,Low,"Sandy, Well-drained",Rosmarinus officinalis,"Carrots, Beans, Cabbage","Tuscan Blue, Arp",Perennial; drought-tolerant.
-69,Sage,Full Sun,Low,"Sandy, Well-drained",Salvia officinalis,"Cabbage, Carrots","Common, Purple",Perennial; used in stuffing.
-70,Mint,Partial Shade,Frequent,"Moist, Well-drained",Mentha spp.,"Tomatoes, Cabbage","Peppermint, Spearmint",Invasive; grow in containers.
+,plant_name,sunlight,water,soil,plant_name_scientific,companions,varieties,notes,spacing
+0,Lettuce,Full Sun/Partial Shade,Moderate,"Loamy, Well-drained",Lactuca sativa,"Carrots, Radishes, Onions","Butterhead, Romaine, Leaf, Iceberg","Harvest outer leaves first for continuous growth.",6-12 inches
+1,Spinach,Partial Shade,Frequent,"Rich, Well-drained",Spinacia oleracea,"Strawberries, Peas, Radishes","Savoy, Flat-leaf","Plant in cool weather for best yield.",6-12 inches
+2,Kale,Full Sun/Partial Shade,Moderate,"Fertile, Well-drained",Brassica oleracea,"Onions, Beets, Celery","Curly, Lacinato, Red Russian","Rich in nutrients; frost-tolerant.",18-24 inches
+3,Swiss Chard,Full Sun/Partial Shade,Moderate,"Rich, Well-drained",Beta vulgaris,"Onions, Beans, Cabbage","Rainbow, Fordhook","Edible stems and leaves.",12-18 inches
+4,Collard Greens,Full Sun,Moderate,"Loamy, Well-drained",Brassica oleracea,"Tomatoes, Onions, Celery","Georgia Southern, Vates","Staple in Southern cooking.",18-24 inches
+5,Mustard Greens,Full Sun/Partial Shade,Frequent,"Fertile, Well-drained",Brassica juncea,"Carrots, Lettuce, Beans","Southern Giant, Red Giant","Spicy flavor; grows quickly.",12-18 inches
+6,Arugula,Partial Shade,Frequent,"Moist, Well-drained",Eruca sativa,"Radishes, Carrots, Dill","Wild, Cultivated","Peppery taste; great in salads.",6-12 inches
+7,Endive,Full Sun/Partial Shade,Moderate,"Fertile, Well-drained",Cichorium endivia,"Radishes, Turnips","Curly, Broad-leaf","Slightly bitter; blanch to reduce bitterness.",12-18 inches
+8,Bok Choy,Partial Shade,Frequent,"Rich, Well-drained",Brassica rapa,"Carrots, Beans","Baby, Standard","Common in Asian cuisine.",6-12 inches
+9,Tatsoi,Partial Shade,Frequent,"Moist, Well-drained",Brassica rapa,"Spinach, Lettuce",Rosette-forming,"Cold-tolerant; mild flavor.",6-12 inches
+10,Carrots,Full Sun,Moderate,"Loose, Sandy",Daucus carota,"Onions, Leeks, Lettuce","Nantes, Danvers","Loosen soil for straight roots.",2-4 inches
+11,Beets,Full Sun,Moderate,"Loamy, Well-drained",Beta vulgaris,"Lettuce, Cabbage, Onions","Detroit, Golden","Edible greens and roots.",3-6 inches
+12,Radishes,Full Sun/Partial Shade,Frequent,"Moist, Well-drained",Raphanus sativus,"Carrots, Peas, Lettuce","Cherry Belle, Daikon","Fast-growing; good for intercropping.",1-2 inches
+13,Turnips,Full Sun/Partial Shade,Moderate,"Loamy, Well-drained",Brassica rapa,"Peas, Beans","Purple Top, Hakurei","Both roots and greens are edible.",4-6 inches
+14,Rutabaga,Full Sun,Moderate,"Fertile, Well-drained",Brassica napus,"Peas, Nasturtiums",American Purple Top,"Sweet flavor after frost.",6-8 inches
+15,Parsnips,Full Sun,Moderate,"Deep, Sandy",Pastinaca sativa,"Peas, Radishes",Hollow Crown,"Harvest after frost for sweetness.",3-6 inches
+16,Sweet Potatoes,Full Sun,Moderate,"Loamy, Well-drained",Ipomoea batatas,"Beans, Corn","Beauregard, Jewel","Vining plant; needs space.",12-18 inches
+17,Potatoes,Full Sun,Moderate,"Loamy, Well-drained",Solanum tuberosum,"Beans, Cabbage, Corn","Russet, Yukon Gold","Hill soil around stems for more tubers.",12-15 inches
+18,Onions,Full Sun,Moderate,"Loamy, Well-drained",Allium cepa,"Carrots, Lettuce, Strawberries","Yellow, Red, White","Plant sets or seeds.",4-6 inches
+19,Shallots,Full Sun,Moderate,"Fertile, Well-drained",Allium cepa,"Beets, Lettuce","French, Dutch","Mild onion flavor.",6-8 inches
+20,Garlic,Full Sun,Moderate,"Loamy, Well-drained",Allium sativum,"Carrots, Beets, Tomatoes","Hardneck, Softneck","Plant cloves in fall for summer harvest.",4-6 inches
+21,Broccoli,Full Sun,Moderate,"Rich, Well-drained",Brassica oleracea,"Beans, Celery, Onions","Calabrese, Purple Sprouting","Harvest before flowers open.",18-24 inches
+22,Cauliflower,Full Sun,Moderate,"Rich, Well-drained",Brassica oleracea,"Beans, Celery, Spinach","Snowball, Purple","Blanch heads by tying leaves.",18-24 inches
+23,Brussels Sprouts,Full Sun,Moderate,"Fertile, Well-drained",Brassica oleracea,"Beets, Carrots","Long Island, Red Bull","Frost improves flavor.",24-30 inches
+24,Cabbage,Full Sun,Moderate,"Rich, Well-drained",Brassica oleracea,"Beets, Celery, Onions","Green, Red, Savoy","Heavy feeder; needs consistent water.",12-24 inches
+25,Kohlrabi,Full Sun/Partial Shade,Moderate,"Fertile, Well-drained",Brassica oleracea,"Beets, Cucumbers","Purple, White","Edible bulb and leaves.",6-12 inches
+26,Tomatoes,Full Sun,Moderate,"Rich, Well-drained",Solanum lycopersicum,"Basil, Carrots, Marigolds","Cherry, Beefsteak","Stake or cage for support.",24-36 inches
+27,Peppers,Full Sun,Moderate,"Loamy, Well-drained",Capsicum annuum,"Basil, Onions, Carrots","Bell, Jalapeño","Heat-loving; mulch to retain moisture.",18-24 inches
+28,Eggplant,Full Sun,Moderate,"Loamy, Well-drained",Solanum melongena,"Beans, Peppers, Spinach","Black Beauty, Japanese","Requires warm soil.",18-24 inches
+29,Tomatillos,Full Sun,Moderate,"Loamy, Well-drained",Physalis philadelphica,"Peppers, Basil","Purple, Green","Used in salsa verde.",24-36 inches
+30,Green Beans,Full Sun,Moderate,"Rich, Well-drained",Phaseolus vulgaris,"Carrots, Corn, Cucumbers","Bush, Pole","Fix nitrogen in soil.",4-6 inches
+31,Snap Peas,Full Sun/Partial Shade,Moderate,"Fertile, Well-drained",Pisum sativum,"Carrots, Radishes","Sugar Snap, Super Snappy","Edible pods.",2-4 inches
+32,Snow Peas,Full Sun/Partial Shade,Moderate,"Fertile, Well-drained",Pisum sativum,"Carrots, Cucumbers",Oregon Sugar Pod,"Flat, tender pods.",2-4 inches
+33,English Peas,Full Sun/Partial Shade,Moderate,"Fertile, Well-drained",Pisum sativum,"Carrots, Turnips","Little Marvel, Green Arrow","Shell for peas.",2-4 inches
+34,Lima Beans,Full Sun,Moderate,"Loamy, Well-drained",Phaseolus lunatus,"Corn, Squash","Fordhook, Henderson","Also called butter beans.",4-6 inches
+35,Black Beans,Full Sun,Moderate,"Loamy, Well-drained",Phaseolus vulgaris,"Corn, Squash",Black Turtle,"Drought-tolerant.",4-6 inches
+36,Pinto Beans,Full Sun,Moderate,"Loamy, Well-drained",Phaseolus vulgaris,"Corn, Squash","Burke, Othello","Common in Mexican cuisine.",4-6 inches
+37,Chickpeas,Full Sun,Low,"Sandy, Well-drained",Cicer arietinum,"Cucumbers, Potatoes","Kabuli, Desi","Also called garbanzo beans.",4-6 inches
+38,Edamame,Full Sun,Moderate,"Loamy, Well-drained",Glycine max,"Corn, Squash","Butterbeans, Midori Giant","Young soybeans.",4-6 inches
+39,Zucchini,Full Sun,Frequent,"Loamy, Well-drained",Cucurbita pepo,"Corn, Beans, Radishes","Black Beauty, Golden","Harvest young for best flavor.",24-36 inches
+40,Yellow Squash,Full Sun,Frequent,"Loamy, Well-drained",Cucurbita pepo,"Corn, Beans","Crookneck, Straightneck","Similar to zucchini.",24-36 inches
+41,Acorn Squash,Full Sun,Moderate,"Rich, Well-drained",Cucurbita pepo,"Corn, Beans",Table Queen,"Winter squash; stores well.",36-48 inches
+42,Butternut Squash,Full Sun,Moderate,"Rich, Well-drained",Cucurbita moschata,"Corn, Beans",Waltham,"Sweet, nutty flavor.",36-48 inches
+43,Spaghetti Squash,Full Sun,Moderate,"Rich, Well-drained",Cucurbita pepo,"Corn, Beans",Vegetable Spaghetti,"Stringy flesh when cooked.",36-48 inches
+44,Pumpkins,Full Sun,Frequent,"Rich, Well-drained",Cucurbita pepo,"Corn, Beans, Radishes","Jack O'Lantern, Sugar Pie","Needs space to sprawl.",48-72 inches
+45,Delicata Squash,Full Sun,Moderate,"Rich, Well-drained",Cucurbita pepo,"Corn, Beans",Sweet Potato Squash,"Edible skin.",24-36 inches
+46,Kabocha Squash,Full Sun,Moderate,"Rich, Well-drained",Cucurbita maxima,"Corn, Beans",Japanese Pumpkin,"Sweet, dense flesh.",36-48 inches
+47,Leeks,Full Sun,Moderate,"Fertile, Well-drained",Allium porrum,"Carrots, Celery","American Flag, Giant Musselburgh","Mild onion flavor.",6-12 inches
+48,Scallions,Full Sun/Partial Shade,Moderate,"Fertile, Well-drained",Allium fistulosum,"Carrots, Beets",White Lisbon,"Also called green onions.",2-4 inches
+49,Chives,Full Sun/Partial Shade,Moderate,"Fertile, Well-drained",Allium schoenoprasum,"Carrots, Tomatoes","Common, Garlic","Perennial; edible flowers.",6-12 inches
+50,Watermelon,Full Sun,Frequent,"Sandy, Well-drained",Citrullus lanatus,"Corn, Beans, Radishes","Sugar Baby, Crimson Sweet","Needs long growing season.",48-72 inches
+51,Cantaloupe,Full Sun,Frequent,"Sandy, Well-drained",Cucumis melo,"Corn, Beans","Hale's Best, Ambrosia","Sweet, fragrant flesh.",36-48 inches
+52,Honeydew Melon,Full Sun,Frequent,"Sandy, Well-drained",Cucumis melo,"Corn, Beans","Green Flesh, Orange Flesh","Sweet and juicy.",36-48 inches
+53,Cucumbers,Full Sun,Frequent,"Sandy, Well-drained",Cucumis sativus,"Beans, Corn, Sunflowers","Pickling, Slicing","Trellis for straighter fruit.",12-24 inches
+54,Bitter Melon,Full Sun,Frequent,"Loamy, Well-drained",Momordica charantia,"Beans, Corn","Indian, Chinese","Bitter taste; used in Asian dishes.",12-18 inches
+55,Corn,Full Sun,Frequent,"Rich, Well-drained",Zea mays,"Beans, Squash, Peas","Sweet, Dent, Flint","Plant in blocks for pollination.",12-18 inches
+56,Okra,Full Sun,Moderate,"Loamy, Well-drained",Abelmoschus esculentus,"Peppers, Eggplant","Clemson Spineless, Burgundy","Thrives in heat.",12-18 inches
+57,Celery,Full Sun/Partial Shade,Frequent,"Rich, Moist",Apium graveolens,"Beans, Tomatoes","Utah, Pascal","Requires consistent watering.",6-12 inches
+58,Fennel,Full Sun,Moderate,"Fertile, Well-drained",Foeniculum vulgare,"Dill, Cabbage","Florence, Bronze","Licorice flavor; bulbs edible.",12-18 inches
+59,Artichokes,Full Sun,Moderate,"Fertile, Well-drained",Cynara scolymus,"Tarragon, Cabbage","Green Globe, Purple","Perennial in warm climates.",36-48 inches
+60,Asparagus,Full Sun,Moderate,"Sandy, Well-drained",Asparagus officinalis,"Tomatoes, Parsley","Jersey, Purple Passion","Perennial; harvest in 2-3 years.",12-18 inches
+61,Rhubarb,Full Sun/Partial Shade,Moderate,"Rich, Well-drained",Rheum rhabarbarum,"Strawberries, Kale","Victoria, Crimson Red","Only stalks are edible.",36-48 inches
+62,Basil,Full Sun,Frequent,"Rich, Well-drained",Ocimum basilicum,"Tomatoes, Peppers, Oregano","Sweet, Purple, Thai","Pinch back to encourage bushiness.",12-18 inches
+63,Cilantro,Full Sun/Partial Shade,Moderate,"Loamy, Well-drained",Coriandrum sativum,"Spinach, Peas","Leisure, Santo","Leaves are cilantro; seeds are coriander.",6-12 inches
+64,Parsley,Full Sun/Partial Shade,Moderate,"Rich, Well-drained",Petroselinum crispum,"Tomatoes, Asparagus","Curly, Italian","Biennial; often grown as annual.",6-12 inches
+65,Dill,Full Sun,Moderate,"Rich, Well-drained",Anethum graveolens,"Cucumbers, Cabbage, Lettuce","Bouquet, Fernleaf","Attracts beneficial insects.",12-18 inches
+66,Oregano,Full Sun,Moderate,"Sandy, Well-drained",Origanum vulgare,"Basil, Peppers, Tomatoes","Greek, Italian","Perennial; drought-tolerant.",12-18 inches
+67,Thyme,Full Sun,Low,"Sandy, Well-drained",Thymus vulgaris,"Cabbage, Strawberries, Eggplant","English, Lemon","Perennial; great for cooking.",12-18 inches
+68,Rosemary,Full Sun,Low,"Sandy, Well-drained",Rosmarinus officinalis,"Carrots, Beans, Cabbage","Tuscan Blue, Arp","Perennial; drought-tolerant.",24-36 inches
+69,Sage,Full Sun,Low,"Sandy, Well-drained",Salvia officinalis,"Cabbage, Carrots","Common, Purple","Perennial; used in stuffing.",24-36 inches
+70,Mint,Partial Shade,Frequent,"Moist, Well-drained",Mentha spp.,"Tomatoes, Cabbage","Peppermint, Spearmint","Invasive; grow in containers.",18-24 inches

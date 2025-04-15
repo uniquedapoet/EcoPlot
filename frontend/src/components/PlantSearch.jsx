@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function PlantSearch() {
+export default function PlantSearch({setGardenSize}) {
   const [plantDetails, setPlantDetails] = useState({
     sunlight: "",
     soil: "",
@@ -9,18 +9,19 @@ export default function PlantSearch() {
   const [gardenSuggestions, setGardenSuggestions] = useState([]);
   const [choosenPlants, setChoosenPlants] = useState([]);
 
+
   const changePlantDetails = (e) => {
     const { id, value } = e.target;
     console.log(id, value);
     setPlantDetails((prevDetails) => ({
       ...prevDetails,
-      [id.replace("-search", "")]: value, 
+      [id.replace("-search", "")]: value,
     }));
   };
 
   const submittPlantDetails = async () => {
     console.log("Submitting Plant Details...");
-    console.log(plantDetails)
+    console.log(plantDetails);
 
     const { sunlight, soil, water } = plantDetails;
 
@@ -28,7 +29,6 @@ export default function PlantSearch() {
       setGardenSuggestions([]);
       return;
     }
-    
 
     try {
       const response = await fetch("http://127.0.0.1:5005/plants/recommend", {
@@ -84,7 +84,6 @@ export default function PlantSearch() {
           <option value="Full Sun/Partial Shade">Full Sun/Partial Shade</option>
           <option value="Partial Shade">Partial Shade</option>
         </select>
-
         <h3>Soil</h3>
         <select
           id="soil-search"
@@ -102,7 +101,6 @@ export default function PlantSearch() {
           <option value="Deep, Sandy">Deep, Sandy</option>
           <option value="Rich, Moist">Rich, Moist</option>
         </select>
-
         <h3>Water</h3>
         <select
           id="water-search"
@@ -115,7 +113,28 @@ export default function PlantSearch() {
           <option value="Frequent">Frequent</option>
           <option value="Low">Low</option>
         </select>
-
+        <h3>Garden Dimensions</h3>
+        <input
+          type="number"
+          placeholder="length"
+          onChange={(e) =>
+            setGardenSize((prev) => ({
+              ...prev,
+              length: parseInt(e.target.value),
+            }))
+          }
+        />{" "}
+        X{" "}
+        <input
+          type="number"
+          placeholder="width"
+          onChange={(e) =>
+            setGardenSize((prev) => ({
+              ...prev,
+              width: parseInt(e.target.value),
+            }))
+          }
+        />
         <button id="PlantSearch" onClick={submittPlantDetails}>
           Search
         </button>

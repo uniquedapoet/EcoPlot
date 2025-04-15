@@ -9,6 +9,7 @@ from db import Base, PlantEngine, PlantSession
 from pathlib import Path
 import pandas as pd
 from typing import List
+from sqlalchemy.exc import IntegrityError
 
 engine = PlantEngine
 Session = PlantSession
@@ -25,6 +26,7 @@ class Plant(Base):
     companions = Column(String, nullable=True)
     varieties = Column(String, nullable=True)
     notes = Column(String, nullable=True)
+    spacing = Column(String, nullable=True)
 
     @staticmethod
     def create_table_from_csv(file_location: Path):
@@ -56,7 +58,7 @@ class Plant(Base):
 
             return plants
 
-        except Exception as e:
+        except IntegrityError as e:
             return f'Problem returning plant data ({e})'
 
         finally:
@@ -112,5 +114,21 @@ class Plant(Base):
 
             return matched_plants[:10]
 
-        except Exception as e:
+        except IntegrityError as e:
             return f'Error finding recommended plants ({e})'
+        
+        finally:
+            session.close()
+        
+    @staticmethod
+    def remove_all_plants():
+        session = Session()
+        try:
+            session.query(Plant).delete()
+            session.commit()
+
+        except IntegrityError as e:
+            return f'Error Finding Plants Table {e}'
+        
+        finally:
+            session.close()
