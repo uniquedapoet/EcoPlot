@@ -110,7 +110,7 @@ class Plant(Base):
 
             matched_plants.sort(key = lambda x: x['match_count'], reverse=True)
 
-            return matched_plants
+            return matched_plants[:10]
 
         except Exception as e:
             return f'Error finding recommended plants ({e})'

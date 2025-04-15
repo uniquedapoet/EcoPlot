@@ -14,7 +14,7 @@ export default function PlantSearch() {
     console.log(id, value);
     setPlantDetails((prevDetails) => ({
       ...prevDetails,
-      [id.replace("-search", "")]: value, // Removes "-search" from ID to match object keys
+      [id.replace("-search", "")]: value, 
     }));
   };
 
