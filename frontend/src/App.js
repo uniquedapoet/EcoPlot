@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState } from "react";
+import PlantSearch from "./components/PlantSearch";
+import GardenGrid from "./components/GardenGrid";
 
 function App() {
+  const [gardenSize, setGardenSize] = useState({ length: 0, width: 0 });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+        rel="stylesheet"
+      />
+      <div className="App">
+        <div className="left">
+          <PlantSearch setGardenSize={setGardenSize} />
+        </div>
+        <div className="right">
+          <h2>Your Garden Plan</h2>
+          <GardenGrid length={gardenSize.length} width={gardenSize.width} />
+        </div>
+        <div className="footer">
+          <p>
+            Drag a plant from the left into the grid to place it. Each square = 6 inches.
+          </p>
+        </div>
+      </div>
+    </>
   );
 }
 

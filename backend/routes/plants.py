@@ -1,7 +1,9 @@
 from flask import Blueprint, request, jsonify
 from models.plants import Plant
+from flask_cors import CORS
 
 plants_bp = Blueprint('plants', __name__)
+CORS(plants_bp)
 
 
 @plants_bp.route('/', methods=['GET'])
@@ -21,7 +23,8 @@ def recommend():
 
     try:
         recommendations = Plant.recommend(**garden_specs)
-        recommendations = [recommendation['plant_name'] for recommendation in recommendations]
+        recommendations = [{key: recommendation[key] for key in ['plant_name', 'spacing']}
+                           for recommendation in recommendations]
 
         return jsonify({'Recommended Plants': recommendations})
 

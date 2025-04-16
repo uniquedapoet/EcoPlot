@@ -1,38 +1,166 @@
 .App {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100vh;
+  background-color: #eaf6f6;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.left, .right {
+  height: 100vh;
+  overflow-y: auto;
+}
+
+
+/* Left side – PlantSearch area */
+.left {
+  flex: 1;
+  max-width: 50%;
+  background-color: aliceblue;
+  padding: 20px;
+  border-right: 2px solid black;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  border-right: 1px solid #ccc;
+}
+
+
+/* Right side – Suggestions, images, or results */
+.right {
+  flex: 1;
+  max-width: 50%;
+  padding: 20px;
+  background-color: #69bb78;
+  box-sizing: border-box;
+  overflow: auto;
+  border-right: 1px solid #ccc;
+}
+
+
+.search-box {
+  margin: 10px;
+  width: 180px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
   text-align: center;
+  font-size: 1rem;
+  background-color: #fff;
+}
+#plant-search {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  gap: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#garden-dimensions{
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#input-section {
+  flex: 1;
+  padding: 10px;
+  background-color: #f0f8ff;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.suggestion-list {
+  flex: 1;
+  padding: 10px;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  overflow-y: auto;
+}
+
+#input-section h3 {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+button#PlantSearch {
+  margin-top: 20px;
+  background-color: #4CAF50;
   color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-weight: bold;
 }
 
-.App-link {
-  color: #61dafb;
+button#PlantSearch:hover {
+  background-color: #45a049;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.grid-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  overflow-y: scroll;
+  height: 500px;
+}
+
+.grid-list li {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.05);
+  transition: all 0.2s ease-in-out;
+}
+
+.grid-list li:hover {
+  transform: translateY(-3px);
+  box-shadow: 2px 4px 10px rgba(0,0,0,0.1);
+}
+
+.right h2 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.garden-grid {
+  margin: 0 auto;
+  background-color: #fff;
+  border: 2px dashed #2d572c;
+  display: grid;
+  border: 1px solid green;
+  gap: 2px;
+  height: fit-content;
+  width: fit-content;
+  max-width: 550px;
+  max-height: 550px;
+}
+
+.grid-cell {
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  background-color: #2d572c;
+  color: white;
+  font-size: 0.9rem;
 }

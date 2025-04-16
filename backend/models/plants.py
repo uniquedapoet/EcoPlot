@@ -9,6 +9,7 @@ from db import Base, PlantEngine, PlantSession
 from pathlib import Path
 import pandas as pd
 from typing import List
+from sqlalchemy.exc import IntegrityError
 
 engine = PlantEngine
 Session = PlantSession
@@ -25,6 +26,7 @@ class Plant(Base):
     companions = Column(String, nullable=True)
     varieties = Column(String, nullable=True)
     notes = Column(String, nullable=True)
+    spacing = Column(String, nullable=True)
 
     @staticmethod
     def create_table_from_csv(file_location: Path):
@@ -56,7 +58,7 @@ class Plant(Base):
 
             return plants
 
-        except Exception as e:
+        except IntegrityError as e:
             return f'Problem returning plant data ({e})'
 
         finally:
@@ -73,6 +75,7 @@ class Plant(Base):
         try:
             final_query = session.query(Plant)
 
+            matched_plants = []
             query = []
 
             if sunlight:
@@ -88,13 +91,44 @@ class Plant(Base):
 
             plants = final_query.all()
 
-            plant_scores = ()
-
             plants = [{column.name: getattr(
                 plant, column.name)for column in Plant.__table__.columns
             } for plant in plants]
 
-            return plants
-        
-        except Exception as e:
+            for plant in plants:
+                match_count = 0
+
+                if plant['sunlight'] == sunlight:
+                    match_count += 1
+
+                if plant['soil'] == soil:
+                    match_count += 1
+
+                if plant['water'] == water:
+                    match_count += 1
+
+                plant['match_count'] = match_count
+                matched_plants.append(plant)
+
+            matched_plants.sort(key = lambda x: x['match_count'], reverse=True)
+
+            return matched_plants[:10]
+
+        except IntegrityError as e:
             return f'Error finding recommended plants ({e})'
+        
+        finally:
+            session.close()
+        
+    @staticmethod
+    def remove_all_plants():
+        session = Session()
+        try:
+            session.query(Plant).delete()
+            session.commit()
+
+        except IntegrityError as e:
+            return f'Error Finding Plants Table {e}'
+        
+        finally:
+            session.close()
