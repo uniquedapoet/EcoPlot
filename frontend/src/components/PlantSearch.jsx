@@ -46,9 +46,9 @@ export default function PlantSearch({ setGardenSize }) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
       const result = await response.json();
+      console.log("Server Response:", result["Recommended Plants"]);
       setGardenSuggestions(result["Recommended Plants"]);
 
-      console.log("Server Response:", result["Recommended Plants"]);
     } catch (error) {
       console.error("Fetch Error:", error);
     }
@@ -185,10 +185,10 @@ export default function PlantSearch({ setGardenSize }) {
               <label>
                 <input
                   type="checkbox"
-                  value={suggestion}
+                  value={suggestion.plant_name}
                   onChange={(e) => addPlant(e)}
                 />
-                {suggestion}
+                {suggestion.plant_name} ({suggestion.spacing})
               </label>
             </li>
           ))}
