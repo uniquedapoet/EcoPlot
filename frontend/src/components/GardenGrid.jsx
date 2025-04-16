@@ -1,11 +1,16 @@
 export default function GardenGrid({ length, width }) {
-    const totalCols = Math.floor(length * 2); // 6 inches per cell
+    const totalCols = Math.floor(length * 2);
     const totalRows = Math.floor(width * 2);
     const cellSize = 25;
   
     const gridSquares = [];
     for (let i = 0; i < totalRows * totalCols; i++) {
-      gridSquares.push(<div key={i} className="grid-cell"></div>);
+      gridSquares.push(
+        <div 
+          key={i} 
+          className="grid-cell"
+        ></div>
+      );
     }
   
     return (
@@ -19,5 +24,4 @@ export default function GardenGrid({ length, width }) {
         {gridSquares}
       </div>
     );
-  }
-  
+}
