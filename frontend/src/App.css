@@ -13,7 +13,6 @@
 
 .App {
   display: flex;
-  max-width: 1200px;
   margin: 0 auto;
   min-height: 100vh;
   background-color: var(--light-green);
@@ -119,18 +118,52 @@ button#PlantSearch:hover {
   padding-top: 2rem;
 }
 
+.garden-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.garden-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.control-button {
+  padding: 8px 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.control-button:hover {
+  background-color: #45a049;
+}
+
+.control-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
 .garden-grid {
   background-color: var(--white);
   border: 2px solid var(--primary-green);
   display: grid;
-  gap: 1px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  gap: 1px;
   margin-top: 1rem;
 }
 
 .grid-cell {
   background-color: var(--light-gray);
   transition: all 0.1s ease;
+}
+
+.garden-grid, .grid-cell {
+  box-sizing: border-box;
 }
 
 .grid-cell:hover {
@@ -195,6 +228,8 @@ button#PlantSearch:hover {
 .footer {
   position: fixed;
   bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
   padding: 1rem;
   text-align: center;
@@ -203,6 +238,7 @@ button#PlantSearch:hover {
   font-size: 0.9rem;
   box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
 }
+
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -217,5 +253,11 @@ button#PlantSearch:hover {
   
   .right {
     padding-bottom: 4rem;
+  }
+}
+
+@media (max-height: 800px) {
+  .footer {
+    display: none;
   }
 }

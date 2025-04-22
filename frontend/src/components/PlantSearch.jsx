@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-export default function PlantSearch({ setGardenSize }) {
+export default function PlantSearch({ setGardenSize, addPlantToGarden }) {
   const [plantDetails, setPlantDetails] = useState({
     sunlight: "",
     soil: "",
     water: "",
   });
   const [gardenSuggestions, setGardenSuggestions] = useState([]);
-  const [choosenPlants, setChoosenPlants] = useState([]);
+  const [selectedPlant, setSelectedPlant] = useState('');
 
   const changePlantDetails = (e) => {
     const { id, value } = e.target;
@@ -48,24 +48,24 @@ export default function PlantSearch({ setGardenSize }) {
       const result = await response.json();
       console.log("Server Response:", result["Recommended Plants"]);
       setGardenSuggestions(result["Recommended Plants"]);
-
     } catch (error) {
       console.error("Fetch Error:", error);
     }
   };
 
-  const addPlant = (e) => {
-    const { value, checked } = e.target;
-
-    setChoosenPlants((prev) => {
-      if (checked) {
-        return [...prev, value];
-      } else {
-        return prev.filter((plant) => plant !== value);
-      }
-    });
+  const handlePlantSelect = (e) => {
+    setSelectedPlant(e.target.value);
   };
-  console.log(choosenPlants);
+
+  const addSelectedPlant = () => {
+    if (!selectedPlant) return;
+
+    const plant = gardenSuggestions.find(p => p.plant_name === selectedPlant);
+    if (plant) {
+      addPlantToGarden(plant);
+      setSelectedPlant('')
+    }
+  };
 
   return (
     <div id="plant-search">
@@ -157,37 +157,49 @@ export default function PlantSearch({ setGardenSize }) {
 
       <div className="suggestion-list">
         <h3>Suggestion List</h3>
+        <p>Ordered by # Garden Spec Matches </p>
         <ul className="grid-list">
           {gardenSuggestions.map((suggestion, index) => (
-            <li 
-            key={index}
-            draggable
-            onDragStart={(e) => {
-              const dragClone = e.currentTarget.cloneNode(true);
-              dragClone.style.width = '80px';
-              dragClone.style.height = '40px';
-              dragClone.style.position = 'fixed';
-              dragClone.style.backgroundColor = 'rgba(0, 0, 0, 0.7)'; 
-              dragClone.style.top = '-100px';
-              dragClone.style.left = '-100px';
-              dragClone.style.pointerEvents = 'none';
-              document.body.appendChild(dragClone);
-              
-              e.dataTransfer.setDragImage(dragClone, 40, 20);
-              e.dataTransfer.setData("text/plain", suggestion);
-              
-              setTimeout(() => document.body.removeChild(dragClone), 0);
-            }}
-            onDragEnd={(e) => {
-              e.currentTarget.style.opacity ='1'
-            }}
+            <li
+              key={index}
+              draggable
+              onDragStart={(e) => {
+                const plant = gardenSuggestions[index];
+                const dragClone = document.createElement('div');
+                
+                // Style the drag preview
+                dragClone.textContent = plant.plant_name
+                  .split(" ")
+                  .map(word => word[0])
+                  .join("");
+                dragClone.style.cssText = `
+                  position: absolute;
+                  width: 30px;
+                  height: 30px;
+                  background-color: lightgreen;
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  color: white;
+                  font-weight: bold;
+                  top: -100px;
+                  left: -100px;
+                  z-index: 9999;
+                `;
+
+                document.body.appendChild(dragClone);
+                e.dataTransfer.setData("application/json", JSON.stringify(plant));
+                e.dataTransfer.setDragImage(dragClone, 15, 15);
+                
+                setTimeout(() => document.body.removeChild(dragClone), 0);
+                e.currentTarget.style.opacity = "0.5";
+              }}
+              onDragEnd={(e) => {
+                e.currentTarget.style.opacity = "1";
+              }}
             >
               <label>
-                <input
-                  type="checkbox"
-                  value={suggestion.plant_name}
-                  onChange={(e) => addPlant(e)}
-                />
                 {suggestion.plant_name} ({suggestion.spacing})
               </label>
             </li>
