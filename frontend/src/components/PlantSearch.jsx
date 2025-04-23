@@ -7,11 +7,10 @@ export default function PlantSearch({ setGardenSize, addPlantToGarden }) {
     water: "",
   });
   const [gardenSuggestions, setGardenSuggestions] = useState([]);
-  const [selectedPlant, setSelectedPlant] = useState('');
+  const [expandedPlant, setExpandedPlant] = useState(null);
 
   const changePlantDetails = (e) => {
     const { id, value } = e.target;
-    console.log(id, value);
     setPlantDetails((prevDetails) => ({
       ...prevDetails,
       [id.replace("-search", "")]: value,
@@ -19,9 +18,6 @@ export default function PlantSearch({ setGardenSize, addPlantToGarden }) {
   };
 
   const submittPlantDetails = async () => {
-    console.log("Submitting Plant Details...");
-    console.log(plantDetails);
-
     const { sunlight, soil, water } = plantDetails;
 
     if (!sunlight && !soil && !water) {
@@ -46,24 +42,18 @@ export default function PlantSearch({ setGardenSize, addPlantToGarden }) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
       const result = await response.json();
-      console.log("Server Response:", result["Recommended Plants"]);
       setGardenSuggestions(result["Recommended Plants"]);
+      setExpandedPlant(null);
     } catch (error) {
       console.error("Fetch Error:", error);
     }
   };
 
-  const handlePlantSelect = (e) => {
-    setSelectedPlant(e.target.value);
-  };
-
-  const addSelectedPlant = () => {
-    if (!selectedPlant) return;
-
-    const plant = gardenSuggestions.find(p => p.plant_name === selectedPlant);
-    if (plant) {
-      addPlantToGarden(plant);
-      setSelectedPlant('')
+  const togglePlantDetails = (plantName, e) => {
+    if (expandedPlant === plantName) {
+      setExpandedPlant(null);
+    } else {
+      setExpandedPlant(plantName);
     }
   };
 
@@ -167,7 +157,6 @@ export default function PlantSearch({ setGardenSize, addPlantToGarden }) {
                 const plant = gardenSuggestions[index];
                 const dragClone = document.createElement('div');
                 
-                // Style the drag preview
                 dragClone.textContent = plant.plant_name
                   .split(" ")
                   .map(word => word[0])
@@ -199,9 +188,58 @@ export default function PlantSearch({ setGardenSize, addPlantToGarden }) {
                 e.currentTarget.style.opacity = "1";
               }}
             >
-              <label>
-                {suggestion.plant_name} ({suggestion.spacing})
-              </label>
+              <div 
+                className="plant-header" 
+                onClick={(e) => togglePlantDetails(suggestion.plant_name, e)}
+              >
+                <label>
+                  {suggestion.plant_name} ({suggestion.spacing})
+                </label>
+                <span className="toggle-icon">
+                  {expandedPlant === suggestion.plant_name ? '▼' : '►'}
+                </span>
+              </div>
+              
+              {expandedPlant === suggestion.plant_name && (
+                <div 
+                  className="plant-details-dropdown"
+                >
+                  <table>
+                    <tbody>
+                      <tr>
+                        <th>Sunlight</th>
+                        <td>{suggestion.sunlight || 'N/A'}</td>
+                      </tr>
+                      <tr>
+                        <th>Soil</th>
+                        <td>{suggestion.soil || 'N/A'}</td>
+                      </tr>
+                      <tr>
+                        <th>Water</th>
+                        <td>{suggestion.water || 'N/A'}</td>
+                      </tr>
+                      <tr>
+                        <th>Spacing</th>
+                        <td>{suggestion.spacing || 'N/A'}</td>
+                      </tr>
+                      <tr>
+                        <th>Varieties</th>
+                        <td>{suggestion.varieties || 'N/A'}</td>
+                      </tr>
+                      <tr>
+                        <th>Companions</th>
+                        <td>{suggestion.companions || 'N/A'}</td>
+                      </tr>
+                      {suggestion.notes && (
+                        <tr>
+                          <th>Notes</th>
+                          <td>{suggestion.notes}</td>
+                        </tr>
+                      )}
+                    </tbody>
+                  </table>
+                </div>
+              )}
             </li>
           ))}
         </ul>

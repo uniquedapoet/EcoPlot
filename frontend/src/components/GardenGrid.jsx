@@ -100,8 +100,7 @@ export default function GardenGrid({ length, width }) {
           const scale = spacingInches / 6;
           const plantSize = cellSize * scale;
 
-          // Calculate shadow size as a percentage of plant size
-          const shadowSize = plantSize * 0.5; // Adjust this multiplier as needed
+          const shadowSize = plantSize * 0.5; 
 
           return (
             <div

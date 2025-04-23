@@ -102,7 +102,7 @@ class Plant(Base):
                     match_count += 1
 
                 if plant['soil'] == soil:
-                    match_count += 1
+                    match_count += 1.5
 
                 if plant['water'] == water:
                     match_count += 1
@@ -112,7 +112,7 @@ class Plant(Base):
 
             matched_plants.sort(key = lambda x: x['match_count'], reverse=True)
 
-            return matched_plants[:10]
+            return matched_plants[:15]
 
         except IntegrityError as e:
             return f'Error finding recommended plants ({e})'
