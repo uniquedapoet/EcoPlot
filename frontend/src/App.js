@@ -22,7 +22,7 @@ function App() {
         </div>
         <div className="footer">
           <p>
-            Drag a plant from the left into the grid to place it. Each square = 6 inches.
+            Drag a plant from the left into the grid to place it. Each square ≈ 6 inches.
           </p>
         </div>
       </div>

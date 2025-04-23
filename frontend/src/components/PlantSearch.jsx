@@ -1,17 +1,16 @@
 import { useState } from "react";
 
-export default function PlantSearch({ setGardenSize }) {
+export default function PlantSearch({ setGardenSize, addPlantToGarden }) {
   const [plantDetails, setPlantDetails] = useState({
     sunlight: "",
     soil: "",
     water: "",
   });
   const [gardenSuggestions, setGardenSuggestions] = useState([]);
-  const [choosenPlants, setChoosenPlants] = useState([]);
+  const [expandedPlant, setExpandedPlant] = useState(null);
 
   const changePlantDetails = (e) => {
     const { id, value } = e.target;
-    console.log(id, value);
     setPlantDetails((prevDetails) => ({
       ...prevDetails,
       [id.replace("-search", "")]: value,
@@ -19,9 +18,6 @@ export default function PlantSearch({ setGardenSize }) {
   };
 
   const submittPlantDetails = async () => {
-    console.log("Submitting Plant Details...");
-    console.log(plantDetails);
-
     const { sunlight, soil, water } = plantDetails;
 
     if (!sunlight && !soil && !water) {
@@ -46,26 +42,20 @@ export default function PlantSearch({ setGardenSize }) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
       const result = await response.json();
-      console.log("Server Response:", result["Recommended Plants"]);
       setGardenSuggestions(result["Recommended Plants"]);
-
+      setExpandedPlant(null);
     } catch (error) {
       console.error("Fetch Error:", error);
     }
   };
 
-  const addPlant = (e) => {
-    const { value, checked } = e.target;
-
-    setChoosenPlants((prev) => {
-      if (checked) {
-        return [...prev, value];
-      } else {
-        return prev.filter((plant) => plant !== value);
-      }
-    });
+  const togglePlantDetails = (plantName, e) => {
+    if (expandedPlant === plantName) {
+      setExpandedPlant(null);
+    } else {
+      setExpandedPlant(plantName);
+    }
   };
-  console.log(choosenPlants);
 
   return (
     <div id="plant-search">
@@ -157,39 +147,99 @@ export default function PlantSearch({ setGardenSize }) {
 
       <div className="suggestion-list">
         <h3>Suggestion List</h3>
+        <p>Ordered by # Garden Spec Matches </p>
         <ul className="grid-list">
           {gardenSuggestions.map((suggestion, index) => (
-            <li 
-            key={index}
-            draggable
-            onDragStart={(e) => {
-              const dragClone = e.currentTarget.cloneNode(true);
-              dragClone.style.width = '80px';
-              dragClone.style.height = '40px';
-              dragClone.style.position = 'fixed';
-              dragClone.style.backgroundColor = 'rgba(0, 0, 0, 0.7)'; 
-              dragClone.style.top = '-100px';
-              dragClone.style.left = '-100px';
-              dragClone.style.pointerEvents = 'none';
-              document.body.appendChild(dragClone);
-              
-              e.dataTransfer.setDragImage(dragClone, 40, 20);
-              e.dataTransfer.setData("text/plain", suggestion);
-              
-              setTimeout(() => document.body.removeChild(dragClone), 0);
-            }}
-            onDragEnd={(e) => {
-              e.currentTarget.style.opacity ='1'
-            }}
+            <li
+              key={index}
+              draggable
+              onDragStart={(e) => {
+                const plant = gardenSuggestions[index];
+                const dragClone = document.createElement('div');
+                
+                dragClone.textContent = plant.plant_name
+                  .split(" ")
+                  .map(word => word[0])
+                  .join("");
+                dragClone.style.cssText = `
+                  position: absolute;
+                  width: 30px;
+                  height: 30px;
+                  background-color: lightgreen;
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  color: white;
+                  font-weight: bold;
+                  top: -100px;
+                  left: -100px;
+                  z-index: 9999;
+                `;
+
+                document.body.appendChild(dragClone);
+                e.dataTransfer.setData("application/json", JSON.stringify(plant));
+                e.dataTransfer.setDragImage(dragClone, 15, 15);
+                
+                setTimeout(() => document.body.removeChild(dragClone), 0);
+                e.currentTarget.style.opacity = "0.5";
+              }}
+              onDragEnd={(e) => {
+                e.currentTarget.style.opacity = "1";
+              }}
             >
-              <label>
-                <input
-                  type="checkbox"
-                  value={suggestion.plant_name}
-                  onChange={(e) => addPlant(e)}
-                />
-                {suggestion.plant_name} ({suggestion.spacing})
-              </label>
+              <div 
+                className="plant-header" 
+                onClick={(e) => togglePlantDetails(suggestion.plant_name, e)}
+              >
+                <label>
+                  {suggestion.plant_name} ({suggestion.spacing})
+                </label>
+                <span className="toggle-icon">
+                  {expandedPlant === suggestion.plant_name ? '▼' : '►'}
+                </span>
+              </div>
+              
+              {expandedPlant === suggestion.plant_name && (
+                <div 
+                  className="plant-details-dropdown"
+                >
+                  <table>
+                    <tbody>
+                      <tr>
+                        <th>Sunlight</th>
+                        <td>{suggestion.sunlight || 'N/A'}</td>
+                      </tr>
+                      <tr>
+                        <th>Soil</th>
+                        <td>{suggestion.soil || 'N/A'}</td>
+                      </tr>
+                      <tr>
+                        <th>Water</th>
+                        <td>{suggestion.water || 'N/A'}</td>
+                      </tr>
+                      <tr>
+                        <th>Spacing</th>
+                        <td>{suggestion.spacing || 'N/A'}</td>
+                      </tr>
+                      <tr>
+                        <th>Varieties</th>
+                        <td>{suggestion.varieties || 'N/A'}</td>
+                      </tr>
+                      <tr>
+                        <th>Companions</th>
+                        <td>{suggestion.companions || 'N/A'}</td>
+                      </tr>
+                      {suggestion.notes && (
+                        <tr>
+                          <th>Notes</th>
+                          <td>{suggestion.notes}</td>
+                        </tr>
+                      )}
+                    </tbody>
+                  </table>
+                </div>
+              )}
             </li>
           ))}
         </ul>

@@ -23,7 +23,7 @@ def recommend():
 
     try:
         recommendations = Plant.recommend(**garden_specs)
-        recommendations = [{key: recommendation[key] for key in ['plant_name', 'spacing']}
+        recommendations = [{key: recommendation[key] for key in list(recommendation.keys())}
                            for recommendation in recommendations]
 
         return jsonify({'Recommended Plants': recommendations})
